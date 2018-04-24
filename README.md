@@ -56,11 +56,11 @@ module.exports = function (source) {
 
 ## 源代码
 
+https://github.com/sunnyShining/jsxStyleLoader
+
 ## 赞赏
 
 如果你觉得我写的对你有帮助，请给我点赞助，不胜感激
 
-![wx](./mdImg/wx.jpeg)
-![zfb](./mdImg/zfb.jpeg)
-
-
+<img src="./mdImg/wx.jpeg" width="300" alt="wx" />
+<img src="./mdImg/zfb.jpeg" width="300" alt="zfb" />
