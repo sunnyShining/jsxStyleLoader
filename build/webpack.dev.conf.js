@@ -5,8 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
-const px2rem = require('postcss-px2rem-exclude');
-const autoprefixer = require('autoprefixer')
 const baseWebpackConfig = require('./webpack.base.conf')
 const packageConfig = require('../package.json')
 const config = require('../config')
@@ -33,7 +31,7 @@ let createNotifierCallback = () => {
 const devWebpackConfig = merge(baseWebpackConfig, {
     module: {
         rules: [
-             {
+            {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader', 'postcss-loader']
             }, {
@@ -68,25 +66,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         new webpack.DefinePlugin({
             'process.env': config.dev.env
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',
             inject: true,
         }),
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                postcss: [
-                    px2rem({
-                        remUnit: 100,
-                        exclude: /node_modules/i
-                    }),
-                    autoprefixer({ browsers: ['iOS >= 7', 'Android >= 4.1'] })
-                ]
-            }
-        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         // copy custom static assets
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, '../static'),
