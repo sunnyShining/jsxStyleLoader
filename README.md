@@ -56,7 +56,7 @@ module.exports = function (source) {
 
 ## 源代码
 
-https://github.com/sunnyShining/jsxStyleLoader
+https://github.com/sunnyShining/jsxStyleLoader/blob/master/tools/loaders/jsxPx2RemLoader/index.js
 
 ## 赞赏
 
