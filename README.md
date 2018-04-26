@@ -1,6 +1,6 @@
 ## 背景
 
-在开发react项目时，很多时候我们把style写在css、less、scss里，经过像postcss这样的配置处理，但有没有这样一种需求呢，像有些样式我们直接写在xml标签上style里，然后也能进行处理，如px2rem能将px转rem，是否在style上写也能实现。
+在开发react项目时，很多时候我们把style写在css、less、scss里，经过像postcss这样的配置处理，但有没有这样一种需求呢，像有些样式我们直接写在xml标签上style里，然后也能进行处理，如px2rem能将px转rem，是否在style上的px也能实现转换。
 
 ## 思路
 
@@ -43,7 +43,7 @@ module.exports = function (source) {
 ```
 
 ## 用法
-
+在webpack module/rules下加具体看源码build文件夹下文件
 ```
 {
     loader: path.join(rootPath, 'loaders/jsxPx2RemLoader'),
